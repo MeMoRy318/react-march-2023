@@ -1,8 +1,14 @@
-const App = () => {
+import React, { FC } from 'react';
+
+import { RickAndMortyCharters } from './componentes';
+
+
+const App:FC = () => {
+
 
     return (
         <div>
-            <h1>Hello world</h1>
+            <RickAndMortyCharters/>
         </div>
     );
 };
