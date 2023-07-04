@@ -1,0 +1,8 @@
+.card{
+    text-align: center;
+    margin-bottom: 100px;
+    background: blue;
+}
+.card__img{
+   height: 300px;
+}

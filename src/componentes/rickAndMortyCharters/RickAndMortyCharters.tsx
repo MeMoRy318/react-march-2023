@@ -4,6 +4,7 @@ import { ICharacter } from '../../interfaces';
 import { rickAndMortyService } from '../../services';
 import { RickAndMortyCharter } from '../index';
 
+import styles from './rickMortyCharters.module.css';
 const RickAndMortyCharters:FC = () => {
     const [charters, setCharters] = useState<ICharacter[]>();
 
@@ -12,7 +13,7 @@ const RickAndMortyCharters:FC = () => {
     }, []);
 
     return (
-        <div>
+        <div className={styles.charters}>
             {!!charters?.length && charters.map(value => <RickAndMortyCharter charter={value} key={value.id}/>) }
         </div>
     );
