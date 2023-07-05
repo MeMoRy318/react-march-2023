@@ -10,7 +10,7 @@ const RickAndMortyCharters:FC = () => {
 
     useEffect(() => {
         rickAndMortyService.getAllCharters().then(({ data }) => setCharters(data.results));
-    }, []);
+    },  []);
 
     return (
         <div className={styles.charters}>
