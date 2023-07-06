@@ -1,8 +1,16 @@
-const App = () => {
+import { FC } from 'react';
+
+import { Posts, Users } from './components';
+import { useUserPosts } from './myCustomHooks';
+
+const App:FC = () => {
+
+    const { posts, setPostId, setPosts } = useUserPosts();
 
     return (
         <div>
-            <h1>Hello world</h1>
+            <Users setPostId={setPostId} setPosts={setPosts}/>
+            {!!posts?.length && <Posts posts={posts}/>}
         </div>
     );
 };

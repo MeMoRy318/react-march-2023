@@ -11,6 +11,7 @@
   },
   "rules": {
     "no-console": "warn",
+    "template-curly-spacing": ["error", "always"],
     "prefer-const": "error",
     "jsx-quotes": [
       "error",
