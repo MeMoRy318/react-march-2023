@@ -13,10 +13,10 @@ const User:FC<IProps> = ({ user, setPostId }) => {
 
     return (
         <div>
-            <h2>ID: {id} Name: {name}</h2>
-            <p>{username}</p>
-            <p>{email}</p>
-            <button onClick={() => setPostId(id)}>show post</button>
+            <h2> ID: { id } Name: { name } </h2>
+            <p> { username } </p>
+            <p> { email } </p>
+            <button onClick={() => setPostId( id ) }>show post</button>
         </div>
     );
 };

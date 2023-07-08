@@ -13,9 +13,9 @@ const PostDetails:FC<IProps> = ({ post }) => {
 
     return (
         <div>
-            <h2>ID: { id } </h2>
-            <h3>TITLE: { title }</h3>
-            <p>BODY: { body } </p>
+            <h2> ID: { id } </h2>
+            <h3> TITLE: { title } </h3>
+            <p> BODY: { body } </p>
         </div>
     );
 };
