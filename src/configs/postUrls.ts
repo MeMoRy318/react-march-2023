@@ -5,7 +5,7 @@ interface IPostUrls {
 
 const postUrls:IPostUrls = {
     getAllPost: 'posts',
-    getPostById: ( id: number ):string => `posts/${id}`,
+    getPostById: ( id: number ): string => `posts/${id}`,
 };
 
 export { postUrls };

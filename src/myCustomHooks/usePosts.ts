@@ -9,7 +9,7 @@ const usePosts = (): [ IPost[], ISetPostsFunction ] => {
     const [posts, setPosts] = useState<IPost[]>([] );
 
     useEffect(() => {
-        postService.getAllPosts().then(({ data }: { data: IPost[] }) => setPosts(data));
+        postService.getAllPosts().then(({ data }) => setPosts( data ));
     }, []);
 
     return [ [...posts], setPosts ];
