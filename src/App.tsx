@@ -1,8 +1,15 @@
+import { PostDetails, Users } from './components';
+import { useUserIdPosts } from './myCustomHooks';
+
 const App = () => {
+
+    const { posts, setPostId } = useUserIdPosts();
 
     return (
         <div>
-            <h1>Hello world</h1>
+            <Users setPostId={ setPostId }/>
+            <hr/>
+            {!!posts?.length && posts.map(value => <PostDetails post={ value } key={ value.id }/>)}
         </div>
     );
 };
