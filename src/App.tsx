@@ -1,8 +1,12 @@
-const App = () => {
+import { FC } from 'react';
+
+import { Launches } from './components';
+
+const App:FC = () => {
 
     return (
         <div>
-            <h1>Hello world</h1>
+            <Launches/>
         </div>
     );
 };
