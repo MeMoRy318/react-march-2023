@@ -1,8 +1,15 @@
-const App = () => {
+import { FC } from 'react';
+
+import { Users } from './components';
+import { useUsers } from './myCustomHooks';
+
+const App:FC = () => {
+
+    const [users] = useUsers();
 
     return (
         <div>
-            <h1>Hello world</h1>
+            <Users users={users}/>
         </div>
     );
 };
