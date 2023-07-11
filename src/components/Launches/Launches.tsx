@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
-import { useLaunches } from '../../myCustomHooks';
 import { Launch } from '../index';
+import { useLaunches } from '../../myCustomHooks';
 
 const Launches: FC = () => {
 
