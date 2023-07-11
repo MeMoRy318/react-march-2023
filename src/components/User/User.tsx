@@ -4,10 +4,11 @@ import { IUser } from '../../interfaces';
 import { Company, UserAddress, UserDetails } from '../index';
 
 interface IProps {
+    setUserId: React.Dispatch<React.SetStateAction<number>>
     user: IUser
     children?: ReactNode
 }
-const User:FC<IProps> = ({ user }) => {
+const User:FC<IProps> = ({ user, setUserId }) => {
 
     return (
         <ul>
@@ -15,6 +16,7 @@ const User:FC<IProps> = ({ user }) => {
             <UserDetails user={user}/>
             <UserAddress address={user.address}/>
             <Company company={user.company}/>
+            <button onClick={() => setUserId( user.id )}>Show Posts</button>
         </ul>
     );
 };

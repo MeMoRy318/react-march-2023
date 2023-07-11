@@ -1,6 +1,6 @@
 import { IUser } from '../interfaces';
 
-import { usersUrls } from '../configs/usersUrls';
+import { usersUrls } from '../configs';
 
 import { axiosService, IRes } from './axiosService';
 
