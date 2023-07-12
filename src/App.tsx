@@ -1,19 +1,19 @@
 import { FC } from 'react';
 
 import { Posts, Users } from './components';
-import { usePostByUserId, useUsers } from './myCustomHooks';
+import { useUsers } from './myCustomHooks';
+import { PostsContextTsx } from './hok';
 
 const App:FC = () => {
 
     const [users] = useUsers();
-    const { posts, setUserId } = usePostByUserId();
 
     return (
-        <div>
-            <Users users={users} setUserId={setUserId}/>
+        <PostsContextTsx>
+            <Users users={users}/>
             <hr/>
-            {!!posts?.length && <Posts posts={posts}/>}
-        </div>
+            <Posts/>
+        </PostsContextTsx>
     );
 };
 

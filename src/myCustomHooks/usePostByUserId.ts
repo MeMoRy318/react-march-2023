@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { IPost } from '../interfaces';
 import { postService } from '../services';
 
-interface IUsePostByUserId {
+export interface IUsePostByUserId {
     posts: IPost[]
     setUserId: React.Dispatch<React.SetStateAction<number>>
 }

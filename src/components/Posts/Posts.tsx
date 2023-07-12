@@ -1,18 +1,21 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactNode, useContext } from 'react';
 
-import { IPost } from '../../interfaces';
 import { Post } from '../index';
+import { IUsePostByUserId } from '../../myCustomHooks';
+import { PostsContext } from '../../hok';
 
 interface IProps {
-    posts: IPost[]
     children?: ReactNode
 }
 
-const Posts:FC<IProps> = ({ posts }) => {
+const Posts:FC<IProps> = () => {
+
+    const { posts } = useContext<IUsePostByUserId>(PostsContext);
+
 
     return (
         <div>
-            {posts.map(value => <Post post={value} key={value.id}/>)}
+            {!!posts?.length && posts.map(value => <Post post={value} key={value.id}/>)}
         </div>
     );
 };
