@@ -1,9 +1,14 @@
+import { CarContextTSX } from './hok';
+import { Cars } from './components';
+import { PageCarForm } from './pages';
+
 const App = () => {
 
     return (
-        <div>
-            <h1>Hello world</h1>
-        </div>
+        <CarContextTSX>
+            <PageCarForm/>
+            <Cars/>
+        </CarContextTSX>
     );
 };
 
