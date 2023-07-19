@@ -1,8 +1,18 @@
-const App = () => {
+import React, { FC, ReactNode } from 'react';
 
+import { Comments } from './componets';
+import { CommentFormPage } from './pages';
+
+interface IProps {
+    children?: ReactNode
+}
+
+const App: FC<IProps> = () => {
     return (
         <div>
-            <h1>Hello world</h1>
+            <CommentFormPage/>
+            <hr/>
+            <Comments/>
         </div>
     );
 };
