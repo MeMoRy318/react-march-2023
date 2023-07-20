@@ -1,10 +1,7 @@
 import React, { useEffect, useRef, MutableRefObject } from 'react';
-
 interface PaginationResult<T extends Element> {
-
     lastElementRef: MutableRefObject<T | null>
 }
-
 const usePagination = <T extends Element>(
     isLoading: boolean,
     totalPage: number,
@@ -19,7 +16,6 @@ const usePagination = <T extends Element>(
     useEffect(() => {
         if (isLoading) return;
         if (observer.current) observer.current?.disconnect();
-
         const callback: IntersectionObserverCallback = (
             entries: IntersectionObserverEntry[],
             observer: IntersectionObserver,
@@ -27,16 +23,11 @@ const usePagination = <T extends Element>(
             if (entries[0].isIntersecting && page < Math.ceil(totalPage / 10)) {
                 setPage((prevPage) => prevPage + 1);
             }
-
         };
-
         observer.current = new IntersectionObserver(callback);
-
-
         if (lastElementRef.current) {
             observer.current.observe(lastElementRef.current);
         }
-
     }, [isLoading]);
 
     return { lastElementRef };
