@@ -1,9 +1,15 @@
+import { Route, Routes } from 'react-router-dom';
+
+import { MyLayout } from './layout/MyLayout';
+
 const App = () => {
 
     return (
-        <div>
-            <h1>Hello world</h1>
-        </div>
+        <Routes>
+            <Route path={'/'} element={<MyLayout/>}>
+
+            </Route>
+        </Routes>
     );
 };
 
