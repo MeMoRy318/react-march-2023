@@ -1,0 +1,29 @@
+.album{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    padding: 5px;
+    border: black 1px solid;
+}
+.album_{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    flex-direction: column;
+    padding: 5px;
+    border: black 1px solid;
+    margin-top: 10px;
+    margin-left: 4%;
+}
+.btn{
+    padding: 30px;
+    background: red;
+    border: none;
+    font-size: 24px;
+    color: white;
+    position: absolute;
+    z-index: 1000;
+}
