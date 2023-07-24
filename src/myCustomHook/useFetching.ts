@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { IRes } from '../services';
 
 type ICallback<T> = () => IRes<T>;
-
 interface IFetching<T> {
     data: T | null
     error: string
