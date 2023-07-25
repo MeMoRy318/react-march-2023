@@ -1,0 +1,10 @@
+.header,.header__content{
+    height: 12vh;
+    background: #141414;
+    width: 100%;
+    position: sticky;
+    flex: 0 0 12vh 100%;
+}
+.header__content{
+    position: fixed;
+}
