@@ -1,3 +1,5 @@
 export enum ERouterPoints {
-    BASE = '/'
+    BASE = '/',
+    MOVIES_LIST = 'moviesList',
+    MOVIE_ID = '/movieInfo/:movieId'
 }

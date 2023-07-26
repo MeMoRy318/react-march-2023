@@ -1,6 +1,6 @@
 import { IGenre } from './genre.interface';
 
-interface IMovies {
+export interface IMovies {
     adult: boolean
     backdrop_path: string
     genre_ids: number[]
@@ -24,6 +24,9 @@ export interface IMovieListResponse {
     total_results: number
 }
 
+export type IResponse<T> = Omit<IMovieListResponse, 'results'> & {
+    results?: T
+};
 
 interface IProductionCompany {
     id: number

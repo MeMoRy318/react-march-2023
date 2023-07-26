@@ -4,6 +4,8 @@
     width: 100%;
     position: sticky;
     flex: 0 0 12vh 100%;
+    z-index: 1000;
+
 }
 .header__content{
     position: fixed;

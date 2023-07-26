@@ -1,0 +1,33 @@
+.card__wrap{
+    width: 18%;
+    margin: 1% 0;
+
+}
+.card{
+    background: center / cover no-repeat;
+    height: 50vh;
+    width: 100%;
+    cursor: pointer;
+}
+.badges{
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+.green,.red,.new__badges{
+    padding: 2% 4%;
+    background: green;
+    border-radius: 5px;
+    color: white;
+}
+.red{
+    background: red;
+}
+.new__badges{
+    background: chocolate;
+}
+
+.info > h2,p{
+    margin: 3% 0;
+}
