@@ -6,12 +6,12 @@ import { axiosService, IRes } from './axiosService';
 interface IMovieService {
     getAll: (params?: object) => IRes<IMovieListResponse>
     getById: (id: number) => IRes<IMovie>
-    search: (query: string) => IRes<IMovie>
+    search: (query: string) => IRes<IMovieListResponse>
 }
 const movieService: IMovieService = {
     getAll: ( params?: object ): IRes<IMovieListResponse> => axiosService.get(urls.movie.base, { params: { ...params } }),
     getById: ( id: number ):IRes<IMovie> => axiosService.get(urls.movie.byId(id)),
-    search: ( query: string ):IRes<IMovie> => axiosService.get(urls.search.base, { params: { query } }),
+    search: ( query: string ):IRes<IMovieListResponse> => axiosService.get(urls.search.base, { params: { query } }),
 };
 
 export { movieService };

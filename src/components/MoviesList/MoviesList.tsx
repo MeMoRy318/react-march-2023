@@ -18,7 +18,7 @@ const MoviesList: FC<IProps> = ({ movie }) => {
     // eslint-disable-next-line @typescript-eslint/naming-convention
     const { id, poster_path, title, release_date, vote_average } = movie;
 
-    const img = urls.posterUrl.base + poster_path || urls.notFoundPoster.base;
+    const img = poster_path ? urls.posterUrl.base + poster_path : urls.notFoundPoster.base;
     const data = +release_date.split('-')[0];
 
     return (

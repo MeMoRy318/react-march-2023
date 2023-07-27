@@ -6,6 +6,8 @@ import { creditService, movieService } from '../../services';
 import { ErrorComponent, LoadingSpinner } from '../../UI';
 import { MovieInfo, PostersPreview } from '../index';
 
+import styles from './MoviesListCard.module.css';
+
 interface IProps {
     children?: ReactNode
     movieId: number
@@ -23,9 +25,8 @@ const MoviesListCard: FC<IProps> = ({ movieId }) => {
     if (error || errorCredit) return (<ErrorComponent message={error || errorCredit}/>);
 
     return (
-        <div>
+        <div className={styles.moviesList}>
             {!!data &&  <MovieInfo movie={data}/>}
-
             {!!dataCredit?.cast?.length && <PostersPreview cast={dataCredit.cast}/>}
         </div>
     );

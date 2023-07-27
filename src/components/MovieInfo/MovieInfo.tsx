@@ -18,8 +18,8 @@ const MovieInfo: FC<IProps> = ({ movie }) => {
     // eslint-disable-next-line @typescript-eslint/naming-convention
     const { title, vote_average, original_language, genres, budget, runtime, release_date, overview } = movie;
 
-    const logoPatch = urls.posterUrl.base + movie.production_companies[0].logo_path || urls.notFoundPoster.base;
-    const backdropPath = urls.posterUrl.base + movie.poster_path || urls.notFoundPoster.base;
+    const logoPatch = movie?.production_companies[0]?.logo_path ? urls.posterUrl.base + movie.production_companies[0].logo_path : urls.notFoundPoster.base;
+    const backdropPath = movie?.poster_path ? urls.posterUrl.base + movie.poster_path : urls.notFoundPoster.base;
     const releaseDate = +release_date.split('-')[0];
 
     return (
@@ -38,7 +38,7 @@ const MovieInfo: FC<IProps> = ({ movie }) => {
                     <h2 className={styles.subTitle}>About the film</h2>
                     <div><span>Retying</span> <StarsRating rating={vote_average}/> </div>
                     <div><span>Countries</span> <span>{original_language}</span> </div>
-                    <div><span>Genre</span> {genres.map(value => <GenreBadge key={value.id} genre={value}/>)} </div>
+                    <div><span>Genre</span> <div className={styles.genre}>{genres.map(value => <GenreBadge key={value.id} genre={value}/>)}</div> </div>
                     <div><span>Budget</span> <span>{budget}</span> </div>
                     <div><span>Runtime</span> <span>{runtime} min</span> </div>
                     <div><span>Release date</span> <span>{releaseDate}</span> </div>

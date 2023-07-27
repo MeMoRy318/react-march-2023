@@ -14,7 +14,6 @@ interface IProps {
 
 const MyLayout: FC<IProps> = () => {
 
-
     return (
         <div className={styles.wrapper}>
             <Header/>

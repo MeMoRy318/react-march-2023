@@ -29,9 +29,9 @@ const GenreBadge: FC<IProps> = ({ genre }) => {
                     borderRadius: '5px',
                     color: 'white',
                     fontSize: '12px',
-                    padding: '2.5px 5px',
+                    padding: '1% 2%',
                     cursor: 'pointer',
-                    marginLeft: '2px',
+                    marginLeft: '1%',
 
                 }}
                 onClick={() => navigate(`/filterMovie/genre/${id}`)}

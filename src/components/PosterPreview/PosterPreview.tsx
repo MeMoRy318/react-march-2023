@@ -13,7 +13,7 @@ const PosterPreview: FC<IProps> = ({ cast }) => {
     // eslint-disable-next-line @typescript-eslint/naming-convention
     const { original_name, profile_path } = cast;
 
-    const profilePath = urls.posterUrl.base + profile_path || urls.notFoundPoster.base;
+    const profilePath = profile_path ? urls.posterUrl.base + profile_path : urls.notFoundPoster.base;
 
     return (
         <div

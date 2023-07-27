@@ -9,4 +9,15 @@
 }
 .header__content{
     position: fixed;
+    display: flex;
+    align-items: center;
+    column-gap: 2%;
+    padding:0 10px;
+
+}
+.header__searchInput{
+ width: 45%;
+    display: flex;
+    justify-content: flex-end;
+
 }
