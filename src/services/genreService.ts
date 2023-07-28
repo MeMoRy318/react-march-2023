@@ -1,13 +1,13 @@
-import { IGenre } from '../interfaces';
+import { IGenres } from '../interfaces';
 import { urls } from '../configs';
 
 import { axiosService, IRes } from './axiosService';
 
 interface IGenreService {
-    getAll: () => IRes<IGenre[]>
+    getAll: () => IRes<IGenres>
 }
 const genreService: IGenreService = {
-    getAll: ():IRes<IGenre[]> => axiosService.get(urls.genre.base),
+    getAll: ():IRes<IGenres> => axiosService.get(urls.genre.base),
 };
 
 export { genreService };

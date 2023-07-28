@@ -34,7 +34,7 @@ const GenreBadge: FC<IProps> = ({ genre }) => {
                     marginLeft: '1%',
 
                 }}
-                onClick={() => navigate(`/filterMovie/genre/${id}`)}
+                onClick={() => navigate(`/filter/${id}`)}
             >{name}</span>
         </>
     );

@@ -30,10 +30,10 @@ const PostersPreview: FC<IProps> = ({ cast }) => {
     return (
         <div className={styles.posters}>
             <div className={styles.buttonContainer}>
-                <button className={styles.button} onClick={handlePrev}>
+                <button className={styles.posters__button} onClick={handlePrev}>
                     <FaArrowCircleLeft />
                 </button>
-                <button className={styles.button} onClick={handleNext}>
+                <button className={styles.posters__button} onClick={handleNext}>
                     <FaArrowCircleRight />
                 </button>
             </div>

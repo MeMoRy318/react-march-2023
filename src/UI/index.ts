@@ -4,3 +4,4 @@ export * from './StarsRating/StarsRating';
 export * from './GenreBadge/GenreBadge';
 export * from './Logotype/Logotype';
 export * from './BurgerMenu/BurgerMenu';
+export * from './Pagination/Pagination';

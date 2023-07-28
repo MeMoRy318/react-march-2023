@@ -6,6 +6,8 @@ import { urls } from '../../configs';
 
 import { GenreBadge, StarsRating } from '../../UI';
 
+import { favoriteMovieService } from '../../services';
+
 import styles from './MovieInfo.module.css';
 
 interface IProps {
@@ -16,11 +18,15 @@ interface IProps {
 const MovieInfo: FC<IProps> = ({ movie }) => {
 
     // eslint-disable-next-line @typescript-eslint/naming-convention
-    const { title, vote_average, original_language, genres, budget, runtime, release_date, overview } = movie;
+    const { title, vote_average, original_language, genres, budget, runtime, release_date, overview, id } = movie;
 
     const logoPatch = movie?.production_companies[0]?.logo_path ? urls.posterUrl.base + movie.production_companies[0].logo_path : urls.notFoundPoster.base;
     const backdropPath = movie?.poster_path ? urls.posterUrl.base + movie.poster_path : urls.notFoundPoster.base;
     const releaseDate = +release_date.split('-')[0];
+
+    const addFavorite = async ():Promise<void> => {
+        await favoriteMovieService.addFavorite(id, true);
+    };
 
     return (
         <div className={styles.movieInfo}>
@@ -32,7 +38,7 @@ const MovieInfo: FC<IProps> = ({ movie }) => {
                 <h2 className={styles.title}>{title}</h2>
                 <div className={styles.btn}>
                     <button>play</button>
-                    <button>favorite</button>
+                    <button onClick={addFavorite}>favorite</button>
                 </div>
                 <div className={styles.description}>
                     <h2 className={styles.subTitle}>About the film</h2>

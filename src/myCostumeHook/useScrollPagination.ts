@@ -10,10 +10,14 @@ interface IFetching<T> {
     isLoading: boolean
 }
 
-function useFetching<T>(callback: ICallback<T>, deps: unknown = 0): IFetching<T> {
+function useFetching<T>(callback: ICallback<T>, params:object = {}, ...args:unknown[]): IFetching<T> {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [error, setError] = useState<string>('');
     const [data, setData] = useState<T | null>(null);
+
+    useEffect(() => {
+        setData(null);
+    }, [...Object.values(params)]);
 
     useEffect(() => {
         setIsLoading(true);
@@ -30,7 +34,8 @@ function useFetching<T>(callback: ICallback<T>, deps: unknown = 0): IFetching<T>
             })
             .catch((e: Error) => setError(e.message))
             .finally(() => setIsLoading(false));
-    }, [deps]);
+    }, [...args, ...Object.values(params)]);
+
 
     return { data, error, isLoading };
 }
@@ -38,15 +43,16 @@ function useFetching<T>(callback: ICallback<T>, deps: unknown = 0): IFetching<T>
 
 export function useScrollPagination<T, I extends Element>(
     callback: () =>IRes<T>,
+    params: object = {},
 ) {
 
     const lastElementRef = useRef<I | null>(null);
     const observer = useRef<IntersectionObserver>();
     const [page, setPage] = useState<number>(1);
 
-    const fn = callback.bind(null, { page });
+    const fn = callback.bind(null, { ...params, page });
 
-    const { data, isLoading, error } = useFetching<T>(fn, page);
+    const { data, isLoading, error } = useFetching<T>(fn, params, page);
 
     useEffect(() => {
         if (isLoading) return;

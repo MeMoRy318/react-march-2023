@@ -2,7 +2,7 @@ import { createBrowserRouter, Navigate } from 'react-router-dom';
 
 import { MyLayout } from './layout';
 import { ERouterPoints } from './configs';
-import { MoviesListCardPage, MoviesPage } from './Containers';
+import { FavoriteMoviesPage, FilterMoviesPage, MoviesListCardPage, MoviesPage, SearchPage } from './Containers';
 
 const router = createBrowserRouter([
     {
@@ -20,6 +20,18 @@ const router = createBrowserRouter([
             {
                 path: ERouterPoints.MOVIE_ID,
                 element: <MoviesListCardPage/>,
+            },
+            {
+                path: ERouterPoints.FILTER,
+                element: <FilterMoviesPage/>,
+            },
+            {
+                path: ERouterPoints.SEARCH,
+                element: <SearchPage/>,
+            },
+            {
+                path: ERouterPoints.FAVORITE,
+                element: <FavoriteMoviesPage/>,
             },
         ],
     },
