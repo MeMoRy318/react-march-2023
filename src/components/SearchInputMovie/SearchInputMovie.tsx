@@ -1,5 +1,4 @@
 import React, { FC, ReactNode, RefObject } from 'react';
-
 import { useNavigate } from 'react-router-dom';
 
 import { IMovies } from '../../interfaces';

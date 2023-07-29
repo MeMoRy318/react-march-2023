@@ -1,7 +1,6 @@
 import React, { FC, ReactNode } from 'react';
 
-import { BurgerMenu, Logotype } from '../../UI';
-
+import { BurgerMenu, Logotype, ToggleSwitch, UserInfo } from '../../UI';
 import { SearchInput } from '../index';
 
 import styles from './Header.module.css';
@@ -19,6 +18,12 @@ const Header: FC<IProps> = () => {
                 <Logotype/>
                 <div className={styles.header__searchInput}>
                     <SearchInput/>
+                </div>
+                <div className={styles.toggle}>
+                    <ToggleSwitch/>
+                </div>
+                <div className={styles.userInfo}>
+                    <UserInfo/>
                 </div>
             </div>
         </header>

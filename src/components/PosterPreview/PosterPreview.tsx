@@ -4,6 +4,7 @@ import { ICast } from '../../interfaces';
 import { urls } from '../../configs';
 
 import styles from './PosterPreview.module.css';
+
 interface IProps {
     children?: ReactNode
     cast: ICast

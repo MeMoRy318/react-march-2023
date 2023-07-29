@@ -1,11 +1,8 @@
 import React, { FC, ReactNode } from 'react';
 
 import { IMovie } from '../../interfaces';
-
 import { urls } from '../../configs';
-
 import { GenreBadge, StarsRating } from '../../UI';
-
 import { favoriteMovieService } from '../../services';
 
 import styles from './MovieInfo.module.css';

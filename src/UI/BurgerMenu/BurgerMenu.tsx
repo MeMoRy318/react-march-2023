@@ -47,12 +47,12 @@ const BurgerMenu: FC<IProps> = ( ) => {
                         </Link>
                     </li>
                     <li>
-                        <Link className={styles.menu__item} to={'/filterMovie/genre/all'}>
+                        <Link className={styles.menu__item} to={'/filter/28'}>
                             movie
                         </Link>
                     </li>
                     <li>
-                        <Link className={styles.menu__item} to={'/filterMovie/favorite'}>
+                        <Link className={styles.menu__item} to={'/favorite'}>
                             Favorite
                         </Link>
                     </li>

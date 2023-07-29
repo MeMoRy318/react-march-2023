@@ -1,15 +1,12 @@
 import React, { ChangeEvent, FC, ReactNode, useRef, useState } from 'react';
-
 import { FaSearch } from 'react-icons/fa';
-
 import { useNavigate } from 'react-router-dom';
 
 import { useDebounce } from '../../myCostumeHook';
 import { movieService } from '../../services';
-
 import { IMovies } from '../../interfaces';
-
 import { SearchInputMovie } from '../index';
+import { checkInappropriateLanguage } from '../../utility';
 
 import styles from './SearchInput.module.css';
 
@@ -23,27 +20,39 @@ const SearchInput: FC<IProps> = () => {
     const [searchMovie, setSearchMovie] = useState<IMovies[]>([]);
     const refObject = useRef<HTMLInputElement>(null);
     const navigate = useNavigate();
+
     const search = async (query:string):Promise<void> => {
         const { data } = await movieService.search(query);
         setSearchMovie(data.results);
     };
 
     const debounce = useDebounce(search, 500);
-    const change = async (e:ChangeEvent<HTMLInputElement>) => {
+    const change = async (e: ChangeEvent<HTMLInputElement>) => {
         if (refObject?.current?.value && refObject?.current?.value.length > 2) {
-            debounce(refObject?.current?.value);
-        }else {
+            const inputValue = refObject.current.value;
+            if (checkInappropriateLanguage(inputValue)) {
+                alert('А ТЯ ТЯ РУКОБЛУД 18 РОКІВ Є?');
+                refObject.current.value = '';
+                setSearchMovie([]);
+            } else {
+                debounce(inputValue);
+            }
+        } else {
             setSearchMovie([]);
         }
     };
 
-    const submit = async (e:ChangeEvent<HTMLFormElement>) => {
+    const submit = async (e: ChangeEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (refObject?.current) {
-            const value = refObject?.current?.value;
-            navigate(`/search/${value}`);
-            refObject.current.value = '';
-            setSearchMovie([]);
+            const value = refObject.current.value;
+            if (checkInappropriateLanguage(value)) {
+                alert('А ТЯ ТЯ РУКОБЛУД 18 РОКІВ Є?');
+            } else {
+                navigate(`/search/${value}`);
+                refObject.current.value = '';
+                setSearchMovie([]);
+            }
         }
     };
 

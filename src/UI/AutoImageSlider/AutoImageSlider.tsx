@@ -12,7 +12,7 @@ interface IProps {
 
 const AutoImageSlider: FC<IProps> = ({ movies }) => {
     const images = useMemo(() => {
-        return mapMovieImg(movies.slice(0, 15));
+        return mapMovieImg(movies.slice(0, 14));
     }, []);
 
     return (
@@ -25,6 +25,7 @@ const AutoImageSlider: FC<IProps> = ({ movies }) => {
                 autoPlay={true}
                 slideInterval={7000}
                 additionalClass={'qwe'}
+                lazyLoad={true}
             />
         </div>
     );

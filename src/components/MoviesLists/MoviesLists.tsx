@@ -3,11 +3,8 @@ import React, { FC, ReactNode } from 'react';
 import { movieService } from '../../services';
 import { IMovieListResponse } from '../../interfaces';
 import { MoviesList } from '../index';
-import { ErrorComponent, LoadingSpinner } from '../../UI';
-
+import { AutoImageSlider, ErrorComponent, LoadingSpinner } from '../../UI';
 import { useScrollPagination } from '../../myCostumeHook';
-
-import { AutoImageSlider } from '../../UI/AutoImageSlider/AutoImageSlider';
 
 import styles from './MoviesLists.module.css';
 

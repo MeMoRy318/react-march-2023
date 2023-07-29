@@ -1,11 +1,11 @@
 import React, { FC, ReactNode } from 'react';
 
 import { IForm, IMovieListResponse } from '../../interfaces';
-import { pathParams } from '../../utility';
+import { ErrorComponent, LoadingSpinner } from '../../UI';
 import { useScrollPagination } from '../../myCostumeHook';
 import { movieService } from '../../services';
+import { pathParams } from '../../utility';
 import { MoviesList } from '../index';
-import { ErrorComponent, LoadingSpinner } from '../../UI';
 
 import styles from './FilterMovies.module.css';
 

@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { IMovies } from '../../interfaces';
 import { StarsRating } from '../../UI';
 import { urls } from '../../configs';
-
 import { favoriteMovieService } from '../../services';
 
 import styles from './FavoriteMovie.module.css';
