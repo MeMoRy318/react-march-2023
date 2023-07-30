@@ -12,7 +12,7 @@ interface IProps {
 
 const AutoImageSlider: FC<IProps> = ({ movies }) => {
     const images = useMemo(() => {
-        return mapMovieImg(movies.slice(0, 14));
+        return mapMovieImg(movies.slice(0, 15));
     }, []);
 
     return (

@@ -1,4 +1,6 @@
-import React, { FC, ReactNode, useState } from 'react';
+import React, { FC, ReactNode, useContext } from 'react';
+
+import { ThemeContext } from '../../hok';
 
 import styles from './ToggleSwitch.module.css';
 
@@ -6,16 +8,16 @@ interface IProps {
     children?:ReactNode
 }
 const ToggleSwitch:FC<IProps> = () => {
-    const [isOn, setIsOn] = useState(false);
+    const { boolean, setBoolean } = useContext(ThemeContext);
 
     const handleToggle = () => {
-        setIsOn(prevState => !prevState);
+        setBoolean(prevState => !prevState);
     };
 
     return (
         <div>
             <label className={styles.switch}>
-                <input type="checkbox" checked={isOn} onChange={handleToggle} />
+                <input type="checkbox" checked={boolean} onChange={handleToggle} />
                 <span className={styles.slider}></span>
             </label>
         </div>

@@ -18,7 +18,7 @@ const SearchMovies: FC<IProps> = ({ query }) => {
     const [page, setPage] = useState<number>(1);
 
     const { data, isLoading, error } =
-        useFetching<IMovieListResponse>(() => movieService.search(query, page), page);
+        useFetching<IMovieListResponse>(() => movieService.search(query, page), page, query);
 
     if (isLoading) return (<LoadingSpinner/>);
     if (error) return (<ErrorComponent message={error}/>);
