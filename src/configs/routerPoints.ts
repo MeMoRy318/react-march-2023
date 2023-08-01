@@ -4,5 +4,6 @@ export enum ERouterPoints {
     MOVIE_ID = '/movieInfo/:movieId',
     FILTER = '/filter/:paramsId',
     SEARCH = '/search/:query',
-    FAVORITE = '/favorite'
+    FAVORITE = '/favorite',
+    NOT_FOUND_PAGE = '*'
 }

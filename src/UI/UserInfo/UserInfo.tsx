@@ -8,9 +8,13 @@ interface IProps {
 
 const UserInfo: FC<IProps> = () => {
     return (
-        <div>
-            <div className={styles.userInfo}><FaUserAlt/></div>
-            {/*<div>asd</div>*/}
+        <div className={styles.userInfo}>
+            <div className={styles.userInfo__icon}><FaUserAlt/></div>
+            <div className={styles.userInfo__content}>
+                <div>Name Leanne Graham</div>
+                <div>User name Bret</div>
+                <div>email Sincere@april.biz</div>
+            </div>
         </div>
     );
 };

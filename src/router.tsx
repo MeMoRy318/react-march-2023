@@ -2,7 +2,14 @@ import { createBrowserRouter, Navigate } from 'react-router-dom';
 
 import { MyLayout } from './layout';
 import { ERouterPoints } from './configs';
-import { FavoriteMoviesPage, FilterMoviesPage, MoviesListCardPage, MoviesPage, SearchPage } from './Containers';
+import {
+    FavoriteMoviesPage,
+    FilterMoviesPage,
+    MoviesListCardPage,
+    MoviesPage,
+    NotFoundPage,
+    SearchPage,
+} from './Containers';
 
 const router = createBrowserRouter([
     {
@@ -32,6 +39,10 @@ const router = createBrowserRouter([
             {
                 path: ERouterPoints.FAVORITE,
                 element: <FavoriteMoviesPage/>,
+            },
+            {
+                path: ERouterPoints.NOT_FOUND_PAGE,
+                element: <NotFoundPage/>,
             },
         ],
     },
