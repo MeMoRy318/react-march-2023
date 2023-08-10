@@ -9,7 +9,7 @@ interface IFetching<T> {
     isLoading: boolean
 }
 
-export function useFetching<T>( callback: ICallback<T>, deps: unknown[] = [] ): IFetching<T> {
+export function useFetching<T>( callback: ICallback<T>, ...deps:unknown[] ): IFetching<T> {
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [error, setError] = useState<string>('');
