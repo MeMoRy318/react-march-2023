@@ -1,0 +1,22 @@
+header{
+    height: 150px;
+    width: 100%;
+    background: blue;
+}
+nav{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+}
+a[class='active']{
+    color: red;
+}
