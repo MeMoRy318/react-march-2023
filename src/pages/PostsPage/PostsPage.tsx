@@ -1,5 +1,7 @@
 import React, { FC, ReactNode } from 'react';
 
+import { Posts } from '../../components';
+
 interface IProps {
     children?: ReactNode
 }
@@ -7,7 +9,7 @@ interface IProps {
 const PostsPage: FC<IProps> = () => {
     return (
         <div>
-
+            <Posts/>
         </div>
     );
 };

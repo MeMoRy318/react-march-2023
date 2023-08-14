@@ -1,5 +1,8 @@
 import React, { FC, ReactNode } from 'react';
 
+import { Photos } from '../../components';
+
+
 interface IProps {
     children?: ReactNode
 }
@@ -7,7 +10,7 @@ interface IProps {
 const PhotosPge: FC<IProps> = () => {
     return (
         <div>
-
+            <Photos/>
         </div>
     );
 };

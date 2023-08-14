@@ -2,6 +2,7 @@ import React, { FC, ReactNode, useEffect } from 'react';
 
 import { useAction } from '../../myCustomHook/useAction';
 import { useMySelector } from '../../myCustomHook';
+import { Comment } from '../Comment/Comment';
 
 interface IProps {
     children?: ReactNode
@@ -18,7 +19,7 @@ const Comments: FC<IProps> = () => {
 
     return (
         <div>
-
+            {!!comments.length && comments.map(value => <Comment key={value.id} comment={value}/>)}
         </div>
     );
 };
