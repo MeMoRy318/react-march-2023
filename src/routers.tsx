@@ -1,14 +1,13 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import React from 'react';
 
-import { MyLayout } from './MyLayout/MyLoyalty';
 import { ERouterEndpoints } from './configs';
-import { ELazyLoadRoutes, LazyLoadRoutes } from './Hok';
+import { ELazyLoadLayout, ELazyLoadRoutes, LazyLoadLayout, LazyLoadRoutes } from './Hok';
 
 const routers = createBrowserRouter([
     {
-        path: '/',
-        element: <MyLayout/>,
+        path: ERouterEndpoints.BASE,
+        element: LazyLoadLayout(ELazyLoadLayout.MY_LAYOUT),
         children: [
             {
                 index: true,

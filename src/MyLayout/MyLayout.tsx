@@ -16,4 +16,4 @@ const MyLayout: FC<IProps> = () => {
     );
 };
 
-export { MyLayout };
+export default MyLayout;

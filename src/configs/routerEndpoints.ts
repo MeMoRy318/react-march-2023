@@ -3,4 +3,5 @@ export enum ERouterEndpoints {
     POSTS='/posts',
     PHOTO='/photo',
     USER='/user',
+    BASE='/'
 }
