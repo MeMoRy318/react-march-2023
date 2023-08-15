@@ -7,7 +7,7 @@ interface IProps {
     children?: ReactNode
 }
 
-const PhotosPge: FC<IProps> = () => {
+const PhotosPage: FC<IProps> = () => {
     return (
         <div>
             <Photos/>
@@ -15,4 +15,4 @@ const PhotosPge: FC<IProps> = () => {
     );
 };
 
-export { PhotosPge };
+export default PhotosPage;

@@ -1,5 +1,4 @@
 import React, { FC, ReactNode } from 'react';
-
 import { NavLink } from 'react-router-dom';
 
 import { ERouterEndpoints } from '../../configs';

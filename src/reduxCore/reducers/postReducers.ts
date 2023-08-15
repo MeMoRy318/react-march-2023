@@ -11,7 +11,7 @@ const postReducer = (state = initiationState, action: IPostAction):IPostInitiati
         case EPostAction.FETCH_POST:
             return { ...state, isLoading: true };
         case EPostAction.FETCH_POST_SUCCESS:
-            return { ...state, posts: action.payload, isLoading: false };
+            return { ...state, posts: [...state.posts, ...action.payload], isLoading: false };
         case EPostAction.FETCH_POST_ERROR:
             return { ...state, error: action.payload, isLoading: false };
         default:

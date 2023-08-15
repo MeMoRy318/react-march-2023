@@ -15,4 +15,10 @@ const fetchComment = ( params: IParams ) => {
     };
 };
 
-export { fetchComment };
+const commentDidUnmount = () => {
+    return (dispatch:Dispatch<ICommentAction>) => {
+        dispatch({ type: ECommentAction.COMMENT_DID_UNMOUNT });
+    };
+};
+
+export { fetchComment, commentDidUnmount };

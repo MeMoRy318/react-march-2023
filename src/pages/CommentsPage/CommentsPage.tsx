@@ -14,4 +14,4 @@ const CommentsPage: FC<IProps> = () => {
     );
 };
 
-export { CommentsPage };
+export default CommentsPage;

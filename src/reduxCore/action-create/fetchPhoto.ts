@@ -1,7 +1,7 @@
 import { Dispatch } from 'react';
 
-import { EPhotoAction, IPhotoAction } from '../../interfaces';
 import { IParams, photoService } from '../../services';
+import { EPhotoAction, IPhotoAction } from '../../interfaces';
 
 const fetchPhoto = (params:IParams) => {
     return async (dispatch:Dispatch<IPhotoAction>) => {
@@ -15,4 +15,10 @@ const fetchPhoto = (params:IParams) => {
     };
 };
 
-export { fetchPhoto };
+const didUnmountPhoto = () => {
+    return (dispatch:Dispatch<IPhotoAction>) => {
+        dispatch({ type: EPhotoAction.DID_UNMOUNT_PHOTO });
+    };
+};
+
+export { fetchPhoto, didUnmountPhoto };

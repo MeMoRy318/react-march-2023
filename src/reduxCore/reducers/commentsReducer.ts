@@ -11,9 +11,11 @@ const commentsReducer = (state = initiationState, action: ICommentAction ) => {
         case ECommentAction.FETCH_COMMENT:
             return { ...state, isLoading: true };
         case ECommentAction.FETCH_COMMENT_SUCCESS:
-            return { ...state, isLoading: false, comments: action.payload };
+            return { ...state, isLoading: false, comments: [...state.comments, ...action.payload] };
         case ECommentAction.FETCH_COMMENT_ERROR:
             return { ...state, isLoading: false, error: action.payload };
+        case ECommentAction.COMMENT_DID_UNMOUNT:
+            return { ...state, comments: [] };
         default:
             return { ...state };
     }

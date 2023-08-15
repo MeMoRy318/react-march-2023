@@ -14,4 +14,4 @@ const PostsPage: FC<IProps> = () => {
     );
 };
 
-export { PostsPage };
+export default PostsPage;

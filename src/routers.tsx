@@ -1,8 +1,9 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
+import React from 'react';
 
 import { MyLayout } from './MyLayout/MyLoyalty';
 import { ERouterEndpoints } from './configs';
-import { CommentsPage, PhotosPge, PostsPage, UsersPage } from './pages';
+import { ELazyLoadRoutes, LazyLoadRoutes } from './Hok';
 
 const routers = createBrowserRouter([
     {
@@ -15,19 +16,19 @@ const routers = createBrowserRouter([
             },
             {
                 path: ERouterEndpoints.USER,
-                element: <UsersPage/>,
+                element: LazyLoadRoutes(ELazyLoadRoutes.USERS_PAGE),
             },
             {
                 path: ERouterEndpoints.POSTS,
-                element: <PostsPage/>,
+                element: LazyLoadRoutes(ELazyLoadRoutes.POSTS_PAGE),
             },
             {
                 path: ERouterEndpoints.COMMENT,
-                element: <CommentsPage/>,
+                element: LazyLoadRoutes(ELazyLoadRoutes.COMMENTS_PAGE),
             },
             {
                 path: ERouterEndpoints.PHOTO,
-                element: <PhotosPge/>,
+                element: LazyLoadRoutes(ELazyLoadRoutes.PHOTOS_PAGE),
             },
         ],
     },
