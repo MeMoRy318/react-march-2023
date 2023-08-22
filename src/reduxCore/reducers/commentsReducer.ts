@@ -6,7 +6,7 @@ const initiationState: ICommentInitiationState = {
     comments: [],
 };
 
-const commentsReducer = (state = initiationState, action: ICommentAction ) => {
+const commentsReducer = (state = initiationState, action: ICommentAction ):ICommentInitiationState => {
     switch (action.type) {
         case ECommentAction.FETCH_COMMENT:
             return { ...state, isLoading: true };

@@ -17,6 +17,7 @@ const Users: FC<IProps> = () => {
         fetchUser();
     }, []);
 
+
     return (
         <div>
             {!!users.length && users.map(value => <User key={value.id} user={value}/>)}
@@ -25,3 +26,5 @@ const Users: FC<IProps> = () => {
 };
 
 export { Users };
+
+
