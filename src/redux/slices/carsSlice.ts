@@ -58,6 +58,18 @@ const deleteCar = createAsyncThunk<void, {id:number}>(
     },
 );
 
+const createCar = createAsyncThunk<void, { car: ICarForm }>(
+    'carsSlice/createCar',
+    async ({ car }, { rejectWithValue, dispatch }) => {
+        try {
+            await carService.create(car);
+            dispatch(getAllCars());
+        }catch (e) {
+
+        }
+    },
+);
+
 const carsSlice = createSlice({
     name: 'carsSlice',
     initialState,
@@ -71,6 +83,9 @@ const carsSlice = createSlice({
     extraReducers: builder => builder
         .addCase(getAllCars.fulfilled, (state, action) => {
             state.cars = action.payload;
+        })
+        .addCase(updateCar.fulfilled, (state, action) => {
+            state.car = null;
         })
         .addMatcher(isFulfilled(), (state) => {
             state.isLoading = false;
@@ -86,6 +101,6 @@ const carsSlice = createSlice({
 
 const { reducer: carReducer, actions } = carsSlice;
 
-const carAction = { ...actions, updateCar, deleteCar, getAllCars };
+const carAction = { ...actions, updateCar, deleteCar, getAllCars, createCar };
 
 export { carReducer, carAction };
