@@ -1,14 +1,18 @@
-import React, { FC, PropsWithChildren } from 'react';
+import React, { FC, PropsWithChildren, useEffect } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 import { ILoginOrRegisterUser } from '../../interfaces';
+import { useAppSelector } from '../../Hooks';
 
 interface IProps extends PropsWithChildren {
     callback: ( data: ILoginOrRegisterUser ) => void
+    state?: ILoginOrRegisterUser
 }
 
 
-const LoginOrRegisterForm: FC<IProps> = ({ callback }) => {
+const LoginOrRegisterForm: FC<IProps> = ({ callback, state }) => {
+
+    const { error } = useAppSelector(state => state.authReducer);
 
     const {
         register,
@@ -17,6 +21,14 @@ const LoginOrRegisterForm: FC<IProps> = ({ callback }) => {
         handleSubmit,
     } = useForm<ILoginOrRegisterUser>();
 
+
+    useEffect(() => {
+        if (state) {
+            setValue('username', state.username);
+            setValue('password', state.password);
+        }
+    }, [state]);
+
     const submit:SubmitHandler<ILoginOrRegisterUser> = (data) => {
         callback(data);
         reset();
@@ -24,6 +36,7 @@ const LoginOrRegisterForm: FC<IProps> = ({ callback }) => {
 
     return (
         <form onSubmit={handleSubmit(submit)}>
+            {!!error && <span>{error}</span>}
             <label>
                 <input type="text" {...register('username')}/>
             </label>

@@ -15,4 +15,10 @@ interface IPaginationResult<T> {
     next?: string
     items: T[]
 }
-export type { ICarResponse, ICarRequest, IPaginationResult };
+
+interface IPagination {
+    page:number
+    page_size: number
+}
+
+export type { ICarResponse, ICarRequest, IPaginationResult, IPagination };
