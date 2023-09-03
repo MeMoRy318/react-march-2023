@@ -20,6 +20,7 @@ const Users: FC<IProps> = () => {
 
     return (
         <div>
+            {React.createElement('h1', null, 'Hello world')}
             {!!users.length && users.map(value => <User key={value.id} user={value}/>)}
         </div>
     );

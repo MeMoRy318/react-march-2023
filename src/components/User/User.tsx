@@ -12,6 +12,9 @@ const User: FC<IProps> = ({ user }) => {
 
     return (
         <ul>
+            {/* {React.createElement('li', null, name)}*/}
+            {/* {React.createElement('li', null, email)}*/}
+            {/* {React.createElement('li', null, username)}*/}
             <li><strong>NAME:</strong>{name}</li>
             <li><strong>USER NAME:</strong>{username}</li>
             <li><strong>EMAIL:</strong>{email}</li>
