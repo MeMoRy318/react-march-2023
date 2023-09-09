@@ -1,0 +1,20 @@
+@import "../../utils/styles/var.module";
+
+.header{
+  @include widthAndHeight(100%,10%);
+  @extend .blockCentering;
+  background: $color-blue;
+  flex: 0 0 auto;
+}
+.header__nav{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  a{
+    @include fontSizeWeight(24px,400);
+    color: $color-white;
+  }
+  a[class='active']{
+    color: $color-red;
+  }
+}

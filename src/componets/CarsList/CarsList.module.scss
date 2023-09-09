@@ -1,0 +1,10 @@
+@import "../../utils/styles/var.module";
+.cars_section{
+@extend .content;
+  //height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  column-gap: 1%;
+  row-gap: 3vh;
+}
